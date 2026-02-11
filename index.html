@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portofolio | Nama Kamu</title>
+  <style>
+    :root { --bg:#0b0f1a; --card:#121a2b; --txt:#e9eefc; --muted:#9fb0d0; --acc:#7c5cff; }
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial;background:radial-gradient(1200px 600px at 20% 10%, #1c2a55 0%, transparent 60%), var(--bg); color:var(--txt); overflow-x:hidden;}
+    .wrap{max-width:980px;margin:0 auto;padding:28px;}
+    header{display:flex;justify-content:space-between;align-items:center;gap:16px;position:sticky;top:0;background:linear-gradient(to bottom, rgba(11,15,26,.9), rgba(11,15,26,.0));backdrop-filter: blur(8px);padding:14px 0;z-index:5}
+    .logo{font-weight:800;letter-spacing:.5px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
+    nav a:hover{color:var(--txt)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center;margin-top:18px}
+    .card{background:linear-gradient(180deg, rgba(124,92,255,.18), rgba(18,26,43,.75));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+    .tag{display:inline-flex;align-items:center;gap:10px;color:var(--muted);font-weight:700}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--acc);box-shadow:0 0 18px rgba(124,92,255,.8)}
+    h1{font-size:42px;line-height:1.05;margin:14px 0 10px}
+    p{color:var(--muted);line-height:1.6;margin:0}
+    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btn{padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:var(--txt);text-decoration:none;font-weight:800}
+    .btn.primary{background:var(--acc);border-color:transparent}
+    .btn:hover{transform:translateY(-1px)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+    .mini{padding:14px;border-radius:16px;background:rgba(18,26,43,.55);border:1px solid rgba(255,255,255,.08)}
+    .mini b{display:block;margin-bottom:6px}
+    section{margin-top:26px}
+    .fadeUp{opacity:0;transform:translateY(14px);animation:fadeUp .8s ease forwards}
+    .delay1{animation-delay:.1s}.delay2{animation-delay:.2s}.delay3{animation-delay:.3s}.delay4{animation-delay:.4s}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+    .floaty{animation:floaty 3.2s ease-in-out infinite}
+    @keyframes floaty{50%{transform:translateY(-8px)}}
+    .blob{
+      width:240px;height:240px;border-radius:60% 40% 55% 45%;
+      background: radial-gradient(circle at 30% 30%, rgba(124,92,255,.9), rgba(0,255,209,.55));
+      filter: blur(.2px);opacity:.9;
+      box-shadow:0 0 80px rgba(124,92,255,.25);
+      margin-left:auto;
+    }
+    .typing{display:inline-block;white-space:nowrap;border-right:2px solid rgba(233,238,252,.7);padding-right:6px;animation:blink .8s step-end infinite}
+    @keyframes blink{50%{border-color:transparent}}
+    footer{color:var(--muted);text-align:center;padding:30px 0 10px}
+    @media (max-width:820px){.hero{grid-template-columns:1fr}.blob{margin:0 auto}}
+    @media (max-width:620px){h1{font-size:34px}.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">👋 Portofolio</div>
+      <nav>
+        <a href="#about">Tentang</a>
+        <a href="#works">Project</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <div class="card fadeUp">
+        <div class="tag"><span class="dot"></span>Web perkenalan diri • animasi halus</div>
+        <h1>Halo, aku <span id="name" class="typing">Nama Kamu</span>.</h1>
+        <p id="desc">Aku bikin konten & ngulik web sederhana yang tampil modern. Ini contoh landing page 1 halaman yang ringan dan cocok dibuat dari HP.</p>
+
+        <div class="btns">
+          <a class="btn primary" href="#works">Lihat Project</a>
+          <a class="btn" href="#contact">Hubungi</a>
+          <a class="btn" target="_blank" href="https://github.com/">GitHub</a>
+        </div>
+      </div>
+
+      <div class="card fadeUp delay2" style="text-align:center">
+        <div class="blob floaty" aria-hidden="true"></div>
+        <p style="margin-top:14px">Animasi “float” + background glow ✨</p>
+      </div>
+    </main>
+
+    <section id="about" class="card fadeUp delay3">
+      <h2 style="margin:0 0 10px">Tentang Aku</h2>
+      <p>Isi dengan bio singkat: skill, bidang, dan apa yang kamu tawarkan. Bisa juga taruh link sosial.</p>
+
+      <div class="grid">
+        <div class="mini"><b>Skill</b><span>HTML • CSS • Editing</span></div>
+        <div class="mini"><b>Fokus</b><span>Landing Page • UI</span></div>
+        <div class="mini"><b>Lokasi</b><span>Indonesia</span></div>
+      </div>
+    </section>
+
+    <section id="works" class="card fadeUp delay4">
+      <h2 style="margin:0 0 10px">Project</h2>
+      <p>Tulis 2–6 project. Kasih deskripsi singkat + tombol.</p>
+      <div class="btns" style="margin-top:14px">
+        <a class="btn" href="#">Project 1</a>
+        <a class="btn" href="#">Project 2</a>
+        <a class="btn" href="#">Project 3</a>
+      </div>
+    </section>
+
+    <section id="contact" class="card fadeUp">
+      <h2 style="margin:0 0 10px">Kontak</h2>
+      <p>DM: <b>@username</b> • Email: <b>emailkamu@gmail.com</b></p>
+    </section>
+
+    <footer>© <span id="year"></span> Nama Kamu — dibuat dari HP</footer>
+  </div>
+
+  <script>
+    // typing effect sederhana (tanpa library)
+    const roles = ["Nama Kamu", "Creator", "Web Learner", "Freelancer"];
+    const el = document.getElementById("name");
+    let i = 0;
+
+    function swap() {
+      i = (i + 1) % roles.length;
+      el.textContent = roles[i];
+    }
+    setInterval(swap, 1800);
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
