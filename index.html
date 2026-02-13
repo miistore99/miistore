@@ -3,248 +3,210 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PERDY • MII STORE</title>
+  <title>MII STORE OFFICIAL — Testimoni</title>
+  <meta name="description" content="Testimoni pelanggan MII STORE OFFICIAL. Fast response, aman, dan terpercaya." />
+
   <style>
     :root{
-      --bg:#070a12;
-      --card: rgba(16, 20, 35, .62);
-      --stroke: rgba(255,255,255,.10);
-      --txt:#eaf0ff;
-      --muted:#a9b6da;
-      --acc:#ff4d8d;     /* pink heart */
-      --acc2:#7c5cff;    /* purple tech */
-      --glow: rgba(124,92,255,.25);
-      --glow2: rgba(255,77,141,.18);
-      --radius: 18px;
+      --bg:#0b0f17;
+      --card:#111827;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --line:rgba(255,255,255,.08);
+      --accent:#22c55e;
+      --accent2:#60a5fa;
+      --shadow:0 18px 50px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    [data-theme="light"]{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:rgba(2,6,23,.10);
+      --accent:#16a34a;
+      --accent2:#2563eb;
+      --shadow:0 16px 40px rgba(2,6,23,.10);
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:var(--txt);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:
-        radial-gradient(900px 520px at 15% 10%, rgba(124,92,255,.22), transparent 65%),
-        radial-gradient(900px 520px at 85% 25%, rgba(255,77,141,.16), transparent 60%),
+        radial-gradient(900px 450px at 15% 10%, rgba(96,165,250,.22), transparent 55%),
+        radial-gradient(800px 420px at 90% 0%, rgba(34,197,94,.18), transparent 55%),
         var(--bg);
-      overflow-x:hidden;
+      color:var(--text);
+      min-height:100vh;
     }
     a{color:inherit}
-    .wrap{max-width:1080px;margin:0 auto;padding:22px 16px 36px;}
-    /* top bar */
+    .wrap{max-width:1080px;margin:0 auto;padding:18px}
     header{
-      position:sticky; top:0; z-index:20;
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding:12px 0;
-      background: linear-gradient(to bottom, rgba(7,10,18,.88), rgba(7,10,18,0));
-      backdrop-filter: blur(10px);
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      padding:18px 0 10px;
     }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:900; letter-spacing:.6px;
-    }
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border:1px solid var(--stroke);
-      background: rgba(255,255,255,.04);
-      border-radius: 999px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      background: linear-gradient(135deg,var(--acc2),var(--acc));
-      box-shadow: 0 0 18px rgba(255,77,141,.45);
-    }
-    nav a{
-      text-decoration:none;
-      color:var(--muted);
-      margin-left:14px;
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent2),var(--accent));
+      box-shadow:0 10px 28px rgba(34,197,94,.22);
+      display:grid;place-items:center;
       font-weight:800;
+      letter-spacing:.5px;
     }
-    nav a:hover{color:var(--txt)}
-    /* hero */
+    .brand h1{margin:0;font-size:16px;line-height:1.1}
+    .brand p{margin:2px 0 0;color:var(--muted);font-size:12px}
+    .actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    .btn{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:14px;
+      cursor:pointer;
+      display:inline-flex;gap:8px;align-items:center;
+      transition:.18s ease;
+      user-select:none;
+    }
+    .btn:hover{transform:translateY(-1px);border-color:rgba(96,165,250,.35)}
+    .btn.primary{
+      border:none;
+      background:linear-gradient(135deg,var(--accent2),var(--accent));
+      color:white;
+      font-weight:700;
+      box-shadow:0 14px 36px rgba(37,99,235,.18);
+    }
     .hero{
+      margin-top:10px;
+      padding:18px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.02);
+      box-shadow:var(--shadow);
+    }
+    .hero h2{margin:0 0 6px;font-size:20px}
+    .hero .sub{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .chip{
+      font-size:12px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      color:var(--muted);
+    }
+
+    .toolbar{
+      display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+      margin:14px 0;
+    }
+    .search{
+      flex:1;
+      min-width:220px;
+      display:flex;gap:10px;align-items:center;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+    }
+    .search input{
+      width:100%;
+      border:none;
+      outline:none;
+      background:transparent;
+      color:var(--text);
+      font-size:14px;
+    }
+    .select{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+      color:var(--text);
+      outline:none;
+      cursor:pointer;
+    }
+
+    .grid{
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:16px;
-      margin-top:12px;
-      align-items:stretch;
+      grid-template-columns:repeat(12,1fr);
+      gap:12px;
+      margin-top:6px;
     }
     .card{
-      background: var(--card);
-      border:1px solid var(--stroke);
-      border-radius: var(--radius);
-      box-shadow:
-        0 14px 45px rgba(0,0,0,.42),
-        0 0 0 1px rgba(255,255,255,.03) inset;
-      overflow:hidden;
+      grid-column:span 6;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:var(--card);
+      box-shadow:var(--shadow);
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
       position:relative;
+      overflow:hidden;
     }
     .card::before{
       content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(620px 180px at 20% 0%, var(--glow), transparent 55%),
-                  radial-gradient(520px 180px at 90% 10%, var(--glow2), transparent 55%);
+      position:absolute;
+      inset:0;
+      background:radial-gradient(420px 220px at 20% 0%, rgba(96,165,250,.18), transparent 55%),
+                 radial-gradient(420px 220px at 100% 10%, rgba(34,197,94,.12), transparent 55%);
       pointer-events:none;
+      opacity:.65;
+    }
+    .card > *{position:relative}
+    .top{display:flex;gap:10px;align-items:center;justify-content:space-between}
+    .who{display:flex;gap:10px;align-items:center;min-width:0}
+    .avatar{
+      width:38px;height:38px;border-radius:14px;
+      border:1px solid var(--line);
+      background:linear-gradient(135deg, rgba(96,165,250,.25), rgba(34,197,94,.18));
+      display:grid;place-items:center;
+      font-weight:800;
+    }
+    .meta{min-width:0}
+    .name{font-weight:800;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .time{color:var(--muted);font-size:12px;margin-top:1px}
+    .stars{display:flex;gap:2px;align-items:center}
+    .star{width:16px;height:16px;opacity:.95}
+    .badge{
+      font-size:11px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(34,197,94,.35);
+      color:rgba(34,197,94,.95);
+      background:rgba(34,197,94,.08);
+      font-weight:700;
+      white-space:nowrap;
+    }
+    .text{
+      color:var(--text);
+      font-size:14px;
+      line-height:1.55;
+      margin:0;
+    }
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      color:var(--muted);
+    }
+
+    footer{
+      margin:16px 0 8px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
       opacity:.9;
     }
-    .pad{padding:18px 18px 16px; position:relative;}
-    h1{
-      margin:10px 0 10px;
-      font-size:40px;
-      line-height:1.03;
-      letter-spacing:.2px;
-    }
-    .sub{
-      color:var(--muted);
-      line-height:1.6;
-      margin:0;
-      font-weight:650;
-    }
-    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .badge{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:9px 10px;border-radius:999px;
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      color:var(--muted);
-      font-weight:800;
-    }
-    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-    .btn{
-      text-decoration:none;
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:11px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      font-weight:900;
-      transform: translateZ(0);
-      transition: transform .15s ease, filter .15s ease;
-    }
-    .btn:hover{transform:translateY(-1px); filter:brightness(1.06)}
-    .btn.primary{
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--acc2), var(--acc));
-      box-shadow: 0 10px 24px rgba(124,92,255,.22), 0 10px 24px rgba(255,77,141,.12);
-    }
 
-    /* right card: anime + video */
-    .media{
-      display:grid;
-      grid-template-rows: 1fr auto;
-      min-height: 360px;
-    }
-    .frame{
-      position:relative;
-      padding:14px;
-    }
-    .art{
-      position:relative;
-      border-radius: 16px;
-      border:1px solid rgba(255,255,255,.10);
-      overflow:hidden;
-      height: 100%;
-      min-height: 240px;
-      background:
-        radial-gradient(600px 260px at 35% 20%, rgba(124,92,255,.24), transparent 60%),
-        radial-gradient(600px 260px at 75% 20%, rgba(255,77,141,.15), transparent 62%),
-        rgba(255,255,255,.03);
-    }
-    .art img{
-      width:100%; height:100%;
-      object-fit:cover;
-      transform: scale(1.02);
-      filter: saturate(1.05) contrast(1.05);
-    }
-    .hearts{
-      position:absolute; left:14px; top:12px;
-      display:flex; gap:8px; align-items:center;
-      z-index:2;
-      font-weight:900;
-    }
-    .heart{
-      width:12px;height:12px; transform: rotate(45deg);
-      background: var(--acc);
-      position:relative;
-      border-radius: 3px;
-      box-shadow: 0 0 18px rgba(255,77,141,.45);
-      animation: pop 1.8s ease-in-out infinite;
-    }
-    .heart::before,.heart::after{
-      content:"";
-      position:absolute;
-      width:12px;height:12px;border-radius:999px;
-      background: var(--acc);
-    }
-    .heart::before{left:-6px; top:0}
-    .heart::after{left:0; top:-6px}
-    .heart:nth-child(2){animation-delay:.15s; opacity:.9; transform:rotate(45deg) scale(.92)}
-    .heart:nth-child(3){animation-delay:.3s; opacity:.8; transform:rotate(45deg) scale(.84)}
-    @keyframes pop{
-      50%{transform: rotate(45deg) translateY(-2px) scale(1.02)}
-    }
-
-    /* video strip */
-    .vidWrap{
-      padding:0 14px 14px;
-      position:relative;
-    }
-    video{
-      width:100%;
-      border-radius: 16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.35);
-      box-shadow: 0 14px 40px rgba(0,0,0,.40);
-      display:block;
-    }
-    .vidHint{
-      margin:10px 2px 0;
-      color:var(--muted);
-      font-weight:800;
-      font-size:13px;
-    }
-
-    /* sections */
-    section{margin-top:16px}
-    h2{margin:0 0 10px; font-size:22px}
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-    }
-    .mini{
-      padding:14px;
-      border-radius: 16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-    }
-    .mini b{display:block;margin-bottom:6px}
-    .mini span{color:var(--muted); font-weight:750}
-    footer{
-      color:var(--muted);
-      text-align:center;
-      padding:26px 0 6px;
-      font-weight:750;
-    }
-
-    /* animations on load */
-    .reveal{opacity:0; transform: translateY(14px); filter: blur(2px)}
-    .reveal.show{opacity:1; transform:none; filter:none; transition: all .55s ease}
-    .delay1{transition-delay:.08s}
-    .delay2{transition-delay:.16s}
-    .delay3{transition-delay:.24s}
-    .delay4{transition-delay:.32s}
-
-    /* responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .media{min-height:unset}
-    }
-    @media (max-width:640px){
-      h1{font-size:34px}
-      .grid{grid-template-columns:1fr}
-      nav a{margin-left:10px}
+    @media (max-width:820px){
+      .card{grid-column:span 12}
+      header{align-items:flex-start}
     }
   </style>
 </head>
@@ -253,125 +215,230 @@
   <div class="wrap">
     <header>
       <div class="brand">
-        <div class="pill"><span class="dot"></span> PERDY</div>
-        <div class="pill" style="color:var(--muted)">MII STORE</div>
+        <div class="logo">MII</div>
+        <div>
+          <h1>MII STORE OFFICIAL</h1>
+          <p>Testimoni pelanggan • Aman • Fast response</p>
+        </div>
       </div>
-      <nav>
-        <a href="#about">Tentang</a>
-        <a href="#store">Store</a>
-        <a href="#contact">Kontak</a>
-      </nav>
+
+      <div class="actions">
+        <button class="btn" id="themeBtn" type="button">🌓 Theme</button>
+        <!-- Ganti nomor WA kamu di bawah -->
+        <a class="btn primary" href="https://wa.me/6280000000000?text=Halo%20MII%20STORE%20OFFICIAL%2C%20saya%20mau%20order." target="_blank" rel="noopener">
+          💬 Order via WhatsApp
+        </a>
+      </div>
     </header>
 
-    <div class="hero">
-      <!-- Left -->
-      <div class="card reveal delay1">
-        <div class="pad">
-          <div class="pill" style="width:max-content">
-            <span class="dot"></span> Web perkenalan • anime tech • animasi halus
-          </div>
-
-          <h1>Halo, aku <span id="typing">PERDY</span> ✨</h1>
-          <p class="sub">
-            Welcome to <b>MII STORE</b>. Aku jualan & ngulik hal kreatif. Web ini ringan, responsif, dan bisa kamu edit dari HP.
-          </p>
-
-          <div class="badges">
-            <div class="badge">💗 Cute Theme</div>
-            <div class="badge">⚡ Smooth Animations</div>
-            <div class="badge">📱 Mobile Friendly</div>
-          </div>
-
-          <div class="btns">
-            <a class="btn primary" href="#store">Lihat Store</a>
-            <a class="btn" href="#contact">Kontak</a>
-            <a class="btn" target="_blank" href="https://github.com/miistore99">GitHub</a>
-          </div>
-        </div>
+    <section class="hero">
+      <h2>Testimoni Asli dari Pelanggan</h2>
+      <p class="sub">
+        Halaman ini dibuat untuk bukti sosial (social proof). Kamu bisa pakai link ini untuk bio TikTok/IG atau kirim ke calon buyer.
+      </p>
+      <div class="chips">
+        <div class="chip">✅ Fast Response</div>
+        <div class="chip">✅ Proses Cepat</div>
+        <div class="chip">✅ Aman & Terpercaya</div>
+        <div class="chip">✅ After-Sales Support</div>
       </div>
+    </section>
 
-      <!-- Right -->
-      <div class="card reveal delay2">
-        <div class="media">
-          <div class="frame">
-            <div class="art">
-              <div class="hearts" aria-hidden="true">
-                <div class="heart"></div><div class="heart"></div><div class="heart"></div>
-              </div>
-
-              <!-- Gambar tema: upload ke repo jadi perdy.png -->
-              <img src="perdy.png" alt="PERDY theme" />
-            </div>
-          </div>
-
-          <div class="vidWrap">
-            <!-- Upload video ke repo: intro.mp4 -->
-            <video src="intro.mp4" autoplay muted loop playsinline controls></video>
-            <div class="vidHint">Kalau video tidak muncul: pastikan file <b>intro.mp4</b> sudah di-upload di repo (root).</div>
-          </div>
-        </div>
+    <div class="toolbar">
+      <div class="search">
+        🔎 <input id="q" placeholder="Cari nama / kata kunci (contoh: cepat, aman, respon)..." />
       </div>
+      <select class="select" id="filterStars">
+        <option value="all">Semua rating</option>
+        <option value="5">5 bintang</option>
+        <option value="4">4 bintang+</option>
+        <option value="3">3 bintang+</option>
+      </select>
+      <select class="select" id="sortBy">
+        <option value="newest">Urut: Terbaru</option>
+        <option value="oldest">Urut: Terlama</option>
+        <option value="highest">Urut: Rating tertinggi</option>
+      </select>
     </div>
 
-    <section id="about" class="card reveal delay3">
-      <div class="pad">
-        <h2>Tentang Aku</h2>
-        <p class="sub">Isi dengan bio singkat: kamu ngapain, fokusmu apa, dan apa yang kamu tawarkan.</p>
-
-        <div class="grid" style="margin-top:12px">
-          <div class="mini"><b>Nama</b><span>PERDY</span></div>
-          <div class="mini"><b>Brand</b><span>MII STORE</span></div>
-          <div class="mini"><b>Fokus</b><span>Produk digital / store / creative</span></div>
+    <section class="grid" id="list">
+      <!-- ====== EDIT TESTIMONI DI SINI (duplication card) ====== -->
+      <article class="card" data-name="Rizky" data-stars="5" data-time="2026-02-13" data-text="Respon cepat, prosesnya rapi. Akun aman dan langsung bisa dipakai. Recommended!">
+        <div class="top">
+          <div class="who">
+            <div class="avatar">R</div>
+            <div class="meta">
+              <div class="name">Rizky</div>
+              <div class="time">13 Feb 2026</div>
+            </div>
+          </div>
+          <div class="stars" aria-label="5 stars">
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+          </div>
         </div>
-      </div>
+        <p class="text">“Respon cepat, prosesnya rapi. Akun aman dan langsung bisa dipakai. Recommended!”</p>
+        <div class="tags">
+          <span class="badge">Verified Buyer</span>
+          <span class="tag">Fast response</span>
+          <span class="tag">Aman</span>
+        </div>
+      </article>
+
+      <article class="card" data-name="Nadia" data-stars="5" data-time="2026-02-11" data-text="Admin ramah, dijelasin step by step. Setelah transaksi juga masih dibantu. Mantap.">
+        <div class="top">
+          <div class="who">
+            <div class="avatar">N</div>
+            <div class="meta">
+              <div class="name">Nadia</div>
+              <div class="time">11 Feb 2026</div>
+            </div>
+          </div>
+          <div class="stars" aria-label="5 stars">
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+          </div>
+        </div>
+        <p class="text">“Admin ramah, dijelasin step by step. Setelah transaksi juga masih dibantu. Mantap.”</p>
+        <div class="tags">
+          <span class="badge">Verified Buyer</span>
+          <span class="tag">Support</span>
+          <span class="tag">Jelas</span>
+        </div>
+      </article>
+
+      <article class="card" data-name="Bagas" data-stars="4" data-time="2026-02-08" data-text="Cepet masuk. Ada panduan juga. Overall puas, next order lagi.">
+        <div class="top">
+          <div class="who">
+            <div class="avatar">B</div>
+            <div class="meta">
+              <div class="name">Bagas</div>
+              <div class="time">08 Feb 2026</div>
+            </div>
+          </div>
+          <div class="stars" aria-label="4 stars">
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+          </div>
+        </div>
+        <p class="text">“Cepet masuk. Ada panduan juga. Overall puas, next order lagi.”</p>
+        <div class="tags">
+          <span class="badge">Buyer</span>
+          <span class="tag">Cepat</span>
+          <span class="tag">Panduan</span>
+        </div>
+      </article>
+
+      <article class="card" data-name="Salsa" data-stars="5" data-time="2026-02-05" data-text="Trusted. Dari awal sampai selesai dibantu. Prosesnya jelas dan aman.">
+        <div class="top">
+          <div class="who">
+            <div class="avatar">S</div>
+            <div class="meta">
+              <div class="name">Salsa</div>
+              <div class="time">05 Feb 2026</div>
+            </div>
+          </div>
+          <div class="stars" aria-label="5 stars">
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.4 1.2-7.1-5-4.9 7-1 3.1-6.3 3.1 6.3 7 1-5 4.9 1.2 7.1z"/></svg>
+          </div>
+        </div>
+        <p class="text">“Trusted. Dari awal sampai selesai dibantu. Prosesnya jelas dan aman.”</p>
+        <div class="tags">
+          <span class="badge">Verified Buyer</span>
+          <span class="tag">Trusted</span>
+          <span class="tag">Aman</span>
+        </div>
+      </article>
+      <!-- ====== END EDIT AREA ====== -->
     </section>
 
-    <section id="store" class="card reveal delay4">
-      <div class="pad">
-        <h2>MII STORE</h2>
-        <p class="sub">Tulis 3 produk unggulan + tombol. Kamu bisa ganti ke link Itemku / G2G / dll.</p>
-
-        <div class="grid" style="margin-top:12px">
-          <div class="mini"><b>Produk 1</b><span>Deskripsi singkat</span></div>
-          <div class="mini"><b>Produk 2</b><span>Deskripsi singkat</span></div>
-          <div class="mini"><b>Produk 3</b><span>Deskripsi singkat</span></div>
-        </div>
-
-        <div class="btns" style="margin-top:14px">
-          <a class="btn primary" href="#contact">Order / Chat</a>
-          <a class="btn" href="#">Link Store 1</a>
-          <a class="btn" href="#">Link Store 2</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="card reveal">
-      <div class="pad">
-        <h2>Kontak</h2>
-        <p class="sub">
-          DM: <b>@username</b> • Email: <b>emailkamu@gmail.com</b> • WA: <b>08xx-xxxx-xxxx</b>
-        </p>
-      </div>
-    </section>
-
-    <footer>© <span id="year"></span> PERDY — MII STORE</footer>
+    <footer>
+      © <span id="year"></span> MII STORE OFFICIAL • Dibuat dengan GitHub Pages
+    </footer>
   </div>
 
   <script>
-    // reveal on load
-    window.addEventListener("load", () => {
-      document.querySelectorAll(".reveal").forEach(el => el.classList.add("show"));
+    // Theme toggle (tersimpan)
+    const root = document.documentElement;
+    const themeBtn = document.getElementById("themeBtn");
+    const saved = localStorage.getItem("mii_theme");
+    if (saved) root.setAttribute("data-theme", saved);
+
+    themeBtn.addEventListener("click", () => {
+      const cur = root.getAttribute("data-theme");
+      const next = cur === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("mii_theme", next);
     });
 
-    // typing-ish swap (ringan)
-    const el = document.getElementById("typing");
-    const words = ["PERDY", "PERDY • MII STORE", "PERDY ✨"];
-    let i = 0;
-    setInterval(() => {
-      i = (i + 1) % words.length;
-      el.textContent = words[i];
-    }, 1800);
+    // Search + filter + sort
+    const q = document.getElementById("q");
+    const filterStars = document.getElementById("filterStars");
+    const sortBy = document.getElementById("sortBy");
+    const list = document.getElementById("list");
 
+    function parseDate(s){
+      // s format: YYYY-MM-DD
+      const [y,m,d] = s.split("-").map(Number);
+      return new Date(y, (m||1)-1, d||1).getTime();
+    }
+
+    function render(){
+      const query = (q.value || "").trim().toLowerCase();
+      const f = filterStars.value;
+      const sort = sortBy.value;
+
+      const cards = Array.from(list.querySelectorAll(".card"));
+
+      // filter
+      cards.forEach(card => {
+        const name = (card.dataset.name || "").toLowerCase();
+        const text = (card.dataset.text || "").toLowerCase();
+        const stars = Number(card.dataset.stars || 0);
+
+        const matchQuery = !query || name.includes(query) || text.includes(query);
+        let matchStars = true;
+        if (f === "5") matchStars = stars === 5;
+        if (f === "4") matchStars = stars >= 4;
+        if (f === "3") matchStars = stars >= 3;
+
+        card.style.display = (matchQuery && matchStars) ? "" : "none";
+      });
+
+      // sort (pakai urutan DOM)
+      const visible = cards.filter(c => c.style.display !== "none");
+      visible.sort((a,b) => {
+        const sa = Number(a.dataset.stars||0), sb = Number(b.dataset.stars||0);
+        const ta = parseDate(a.dataset.time||"2000-01-01");
+        const tb = parseDate(b.dataset.time||"2000-01-01");
+        if (sort === "newest") return tb - ta;
+        if (sort === "oldest") return ta - tb;
+        if (sort === "highest") return sb - sa || tb - ta;
+        return 0;
+      });
+
+      // append in new order (only visible ones)
+      visible.forEach(c => list.appendChild(c));
+    }
+
+    q.addEventListener("input", render);
+    filterStars.addEventListener("change", render);
+    sortBy.addEventListener("change", render);
+    render();
+
+    // year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
